@@ -1,0 +1,33 @@
+/*
+ * @Description: 
+ * @Author: 老纪
+ * @Date: 2021-11-01 20:57:10
+ * @LastEditTime: 2021-11-01 22:02:29
+ */
+// const是JavaScript es6中的语法；这里定义的变量不能用const，要用var;wxs是借鉴了javascript语法，跟javascript不是同种语言，文档中有说明
+//在写wxs时要参照es5语法
+//wxs也可以用来编写小程序的过滤器
+var format = function(text) {
+    // 把text中的\\n换成\n
+    if (!text) {
+        return
+    }
+    // regExp正则表达式函数
+    var reg = getRegExp('\\\\n', 'g')
+    return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+var limit = function(array, length) {
+    if (!array) {
+        return
+    }
+    // 截取数组的前若干条:
+    return array.slice(0, length)
+}
+
+// wxs不是javascript。有自己语法(和es5很像)
+
+module.exports = {
+    format: format,
+    limit: limit
+}

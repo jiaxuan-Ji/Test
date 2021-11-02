@@ -1,0 +1,28 @@
+<!-- 列表渲染: -->
+<view wx:if="{{!searching}}" class="container">
+  <view class="header">
+    <view class='box' bind:tap="onSearching">
+      <image src="/images/icon/search.png" />
+      <text>搜索书籍</text>
+    </view>
+  </view>
+
+  <view class="sub-container">
+    <image class="head-img" src="/images/book/quality.png" />
+    <view class="books-container">
+
+      <!-- 小程序内部规定item指定数组中的一组数据 如果要用别名(一般情况下不需要指定别名，除非与js文件中的data数据命名冲突)；就使用 wx:for-item-->
+      <!-- for循环  wx:for列表渲染-->
+      <!-- wx:key=id就是item.id -->
+      <block wx:key="id" wx:for="{{books}}">
+        <v-book book="{{item}}" class="book" />
+      </block>
+    </view>
+  </view>
+</view>
+<v-search
+  more="{{more}}"
+  bind:cancel="onCancel"
+  wx:if="{{searching}}"
+/>
+

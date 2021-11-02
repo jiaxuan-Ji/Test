@@ -1,0 +1,9 @@
+<view bind:tap="onTap" class="container tag-class">
+  <!-- <slot name="before"></slot> -->
+
+  <text>{{text}}</text>
+  <!-- <text>{{num}}</text> -->
+  <!-- 这个num在需要的时候才需要传递进来 使用solt插槽(可以从外面向组件内部传递一个标签),当组件外部需要这个num，创建一个text替换slot-->
+  <slot name="after"></slot>
+</view>
+

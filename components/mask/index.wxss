@@ -1,0 +1,11 @@
+/* 设置黑色透明的背景 */
+
+.mask {
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    z-index: 99
+}
